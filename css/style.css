@@ -1,0 +1,52 @@
+header,
+section {
+	width: 70%;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+div {
+	border: 1px solid black;
+}
+
+input {
+	display: block;
+	margin: 2em auto;
+	height: 1.5em;
+}
+
+p {
+	font-size: 2em;
+	margin: 1em;
+	margin-bottom: 0;
+}
+
+#face-container {
+	width: 202px;
+	height: 203px;
+	float: left;
+}
+
+#logo-container {
+	margin-left: 202px;
+	height: 203px;
+	overflow: auto;
+}
+
+#logo {
+	width: 460px;
+	display: block;
+	margin: 2.5em auto;
+}
+
+.column {
+	display: inline-block;
+	width: 33.18%;
+	border: none;
+}
+
+.madlibs-text {
+	margin: 0.5em 2em;
+	font-size: 1.2em;
+}
+

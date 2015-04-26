@@ -14,10 +14,11 @@
 		<div id="logo-container"><img src="images/logo.png" alt="logo" id="logo"></div>
 	</header>
 	<section id="input">
+		<p>Change character gender: <button ng-click="change()">Change!</button></p>
 		<p>Provide the following words:</p>
 		<!-- no space between divs because browser treats it as text node and adds margin-->
 		<div class="column">
-			<input type="text" placeholder="Female Name" ng-model="female_name">
+			<input type="text" placeholder="Female Name" ng-model="name" id="name">
 			<input type="text" placeholder="Job Title" ng-model="job_title">
 			<input type="text" placeholder="Tedious Task" ng-model="tedious_task">
 		</div><div class="column">
@@ -31,9 +32,9 @@
 		</div>
 	</section>
 	<section id="output">
-		<p class="madlibs-text">[{{female_name}}] was a [{{job_title}}] who loved technology. Although she loved parts of her job, she absolutely hated [{{tedious_task}}] and [{{dirty_task}}]. So, [{{female_name}}] met with her life mentor [{{celebrity}}] who told her to learn how to [{{useless_skill}}] with Thinkful. Thinkful didn't offer a course on [{{useless_skill}}] so she studied programming instead.</p>
+		<p class="madlibs-text">[{{name}}] was a [{{job_title}}] who loved technology. Although [{{gender.subjectPronoun}}] loved parts of [{{gender.possessivePronoun}}] job, [{{gender.subjectPronoun}}] absolutely hated [{{tedious_task}}] and [{{dirty_task}}]. So, [{{name}}] met with [{{gender.possessivePronoun}}] life mentor [{{celebrity}}] who told [{{gender.objectPronoun}}] to learn how to [{{useless_skill}}] with Thinkful. Thinkful didn't offer a course on [{{useless_skill}}] so [{{gender.subjectPronoun}}] studied programming instead.</p>
  
-		<p class="madlibs-text">What a great decision! With her new skills, [{{female_name}}] built a(n) [{{adjective}}] robot named [{{obnoxious_celebrity}}] that not only loved [{{dirty_task}}] but did it [{{huge_number}}] times faster.</p>
+		<p class="madlibs-text">What a great decision! With [{{gender.possessivePronoun}}] new skills, [{{name}}] built a(n) [{{adjective}}] robot named [{{obnoxious_celebrity}}] that not only loved [{{dirty_task}}] but did it [{{huge_number}}] times faster.</p>
 	</section>
 </body>
 </html>

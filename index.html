@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
 	<title>ngMadLibs</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script src="js/myApp.js"></script>
 </head>
-<body ng-app="" ng-init="number=10">
+<body ng-controller='MyCtrl'>
 	<header>
 		<div id="face-container"><img src="images/happy-face.png" alt="happy face"></div>
 		<div id="logo-container"><img src="images/logo.png" alt="logo" id="logo"></div>

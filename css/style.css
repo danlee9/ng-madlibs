@@ -15,10 +15,18 @@ input {
 	height: 1.5em;
 }
 
+button {
+	height: 2em;
+}
+
 p {
 	font-size: 2em;
 	margin: 1em;
 	margin-bottom: 0;
+}
+
+hr {
+	width: 90%;
 }
 
 #face-container {
@@ -43,6 +51,19 @@ p {
 	display: inline-block;
 	width: 33.18%;
 	border: none;
+}
+
+.generator {
+	margin-left: 60%;
+	margin-top: 1em;
+	margin-bottom: 1.8em;
+	height: 2em;
+	display: inline-block;
+}
+
+.error {
+	margin-left: 0.5em;
+	color: indianred;
 }
 
 .madlibs-text {

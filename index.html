@@ -13,28 +13,34 @@
 		<div id="face-container"><img src="images/happy-face.png" alt="happy face"></div>
 		<div id="logo-container"><img src="images/logo.png" alt="logo" id="logo"></div>
 	</header>
-	<section id="input">
-		<p>Change character gender: <button ng-click="change()">Change!</button></p>
+	<section id="input" ng-show="!validated">
+		<p><button ng-click="change()">Change Character Gender</button></p>
 		<p>Provide the following words:</p>
 		<!-- no space between divs because browser treats it as text node and adds margin-->
-		<div class="column">
-			<input type="text" placeholder="Female Name" ng-model="name" id="name">
-			<input type="text" placeholder="Job Title" ng-model="job_title">
-			<input type="text" placeholder="Tedious Task" ng-model="tedious_task">
-		</div><div class="column">
-			<input type="text" placeholder="Dirty Task" ng-model="dirty_task">
-			<input type="text" placeholder="Celebrity" ng-model="celebrity">
-			<input type="text" placeholder="Useless Skill" ng-model="useless_skill">
-		</div><div class="column">
-			<input type="text" placeholder="Obnoxious Celebrity" ng-model="obnoxious_celebrity">
-			<input type="text" placeholder="Huge Number" ng-model="huge_number">
-			<input type="text" placeholder="Adjective" ng-model="adjective">
-		</div>
+		<form name="myForm" novalidate ng-submit="submit()">
+			<div class="column">
+				<input type="text" name="texty" required placeholder="Female Name" ng-model="name" id="name">
+				<input type="text" name="texty" required placeholder="Job Title" ng-model="job_title">
+				<input type="text" name="texty" required placeholder="Tedious Task" ng-model="tedious_task">
+			</div><div class="column">
+				<input type="text" name="texty" required placeholder="Dirty Task" ng-model="dirty_task">
+				<input type="text" name="texty" required placeholder="Celebrity" ng-model="celebrity">
+				<input type="text" name="texty" required placeholder="Useless Skill" ng-model="useless_skill">
+			</div><div class="column">
+				<input type="text" name="texty" required placeholder="Obnoxious Celebrity" ng-model="obnoxious_celebrity">
+				<input type="text" name="num" required placeholder="Huge Number" ng-model="huge_number" ng-pattern="/^([1-9][0-9]*)$/">
+				<input type="text" name="texty" required placeholder="Adjective" ng-model="adjective">
+			</div>
+			<hr>
+			<input type="submit" class="generator" value="Generate My Mad Lib"><span class="error" ng-if="clicked && (myForm.texty.$error.required || myForm.num.$error.required)">Some inputs are missing</span><span class="error" ng-if="clicked && myForm.num.$error.pattern">"Huge Number" input requires a number</span>
+		</form>
 	</section>
-	<section id="output">
+	<section id="output" ng-show="validated">
 		<p class="madlibs-text">[{{name}}] was a [{{job_title}}] who loved technology. Although [{{gender.subjectPronoun}}] loved parts of [{{gender.possessivePronoun}}] job, [{{gender.subjectPronoun}}] absolutely hated [{{tedious_task}}] and [{{dirty_task}}]. So, [{{name}}] met with [{{gender.possessivePronoun}}] life mentor [{{celebrity}}] who told [{{gender.objectPronoun}}] to learn how to [{{useless_skill}}] with Thinkful. Thinkful didn't offer a course on [{{useless_skill}}] so [{{gender.subjectPronoun}}] studied programming instead.</p>
  
 		<p class="madlibs-text">What a great decision! With [{{gender.possessivePronoun}}] new skills, [{{name}}] built a(n) [{{adjective}}] robot named [{{obnoxious_celebrity}}] that not only loved [{{dirty_task}}] but did it [{{huge_number}}] times faster.</p>
+
+		<button class="generator" ng-click="reset()">Start Over</button>
 	</section>
 </body>
 </html>

@@ -24,4 +24,25 @@ angular.module('myApp', [])
 				$scope.gender = female;
 			}
 		};
+		$scope.clicked = false;
+		$scope.validated = false;
+		$scope.submit = function() {
+			$scope.clicked = true;
+			if ($scope.myForm.$valid) {
+				$scope.validated = true;
+			};
+		};
+		$scope.reset = function() {
+			$scope.clicked = false;
+			$scope.validated = false;
+			$scope.name = "";
+			$scope.job_title = "";
+			$scope.tedious_task = "";
+			$scope.dirty_task = "";
+			$scope.celebrity = "";
+			$scope.useless_skill = "";
+			$scope.obnoxious_celebrity = "";
+			$scope.huge_number = "";
+			$scope.adjective = "";
+		};
 	});

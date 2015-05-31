@@ -71,3 +71,39 @@ hr {
 	font-size: 1.2em;
 }
 
+#output {
+	transition: all linear 1s;
+	-webkit-transition: all linear 1s;
+}
+
+#output.ng-hide-remove,
+#output.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+#output.ng-hide-add,
+#output.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+/*#input {
+	transition: all linear 1s;
+	-webkit-transition: all linear 1s;
+	transition-delay: 1s;
+    -webkit-transition-duration: 1s;
+}
+
+#input.ng-hide-remove,
+#input.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+#input.ng-hide-add,
+#input.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+*/
+
+
+/*transition-duration: 0s;
+  -webkit-transition-duration: 0s;*/

@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngAnimate'])
 	.constant('VERSION', 1.0)
 	.controller('MyCtrl', function(VERSION, $scope) {
 		$scope.version = VERSION;

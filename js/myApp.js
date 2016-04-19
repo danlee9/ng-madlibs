@@ -15,14 +15,14 @@ angular.module('myApp', ['ngAnimate'])
 		$scope.gender = female;
 		$scope.article1 = 'a';
 		$scope.article2 = 'a';
-		$scope.vowelCheck = function(article, word) {
+		$scope.vowelCheck = function(word) {
 			var vowels = ['a', 'e', 'i', 'o', 'u'];
 			for (var i=0; i<5; i++) {
 				if (word[0] == vowels[i]) {
-					article = 'an';
-					break;
+					return true;
 				}
 			}
+			return false;
 		};
 		$scope.change = function() {
 			if ($scope.gender == female) {
@@ -40,8 +40,8 @@ angular.module('myApp', ['ngAnimate'])
 		$scope.submit = function() {
 			$scope.clicked = true;
 			if ($scope.myForm.$valid) {
-				$scope.vowelCheck($scope.article1, $scope.job_title);
-				$scope.vowelCheck($scope.article2, $scope.adjective);
+				if ($scope.vowelCheck($scope.job_title)) {$scope.article1 = 'an'};
+				if ($scope.vowelCheck($scope.adjective)) {$scope.article2 = 'an'};
 				$scope.validated = true;
 			};
 		};

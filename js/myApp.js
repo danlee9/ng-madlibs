@@ -13,6 +13,17 @@ angular.module('myApp', ['ngAnimate'])
 			possessivePronoun: 'her'
 		};
 		$scope.gender = female;
+		$scope.article1 = 'a';
+		$scope.article2 = 'a';
+		$scope.vowelCheck = function(article, word) {
+			var vowels = ['a', 'e', 'i', 'o', 'u'];
+			for (var i=0; i<5; i++) {
+				if (word[0] == vowels[i]) {
+					article = 'an';
+					break;
+				}
+			}
+		};
 		$scope.change = function() {
 			if ($scope.gender == female) {
 				document.getElementById("name").setAttribute("placeholder",
@@ -29,6 +40,8 @@ angular.module('myApp', ['ngAnimate'])
 		$scope.submit = function() {
 			$scope.clicked = true;
 			if ($scope.myForm.$valid) {
+				$scope.vowelCheck($scope.article1, $scope.job_title);
+				$scope.vowelCheck($scope.article2, $scope.adjective);
 				$scope.validated = true;
 			};
 		};
@@ -44,5 +57,7 @@ angular.module('myApp', ['ngAnimate'])
 			$scope.obnoxious_celebrity = "";
 			$scope.huge_number = "";
 			$scope.adjective = "";
+			$scope.article1 = 'a';
+			$scope.article2 = 'a';
 		};
 	});
